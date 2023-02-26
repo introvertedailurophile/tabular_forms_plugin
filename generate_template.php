@@ -11,29 +11,29 @@
       $c = mb_substr($word, 2, 1, "utf-8");
 
       // Original table, to be turned into a template
-      $words = [
-         'singular' => [
+       $words = [
+         'nominative' => [
             'label' => 'مُفْرَدْ (Singular)',
             'types' => [
-               'nominative' => 'مَفْعُوْلٌ',
-               'accusative' => 'مَفْعُوْلاً',
-               'genitive' => 'مَفْعُوْلٍ',
+               'singular' => 'مَفْعُوْلٌ',
+               'dual' => 'مَفْعُوْلاَنِ',
+               'plural' => 'مَفْعُوْلُوْنَ',
             ]
          ],
-         'dual' => [
+         'accusative' => [
             'label' => 'مُثَنَّى (Dual)',
             'types' => [
-               'nominative' => 'مَفْعُوْلاَنِ',
-               'accusative' => 'مَفْعُوْلَيْنِ',
-               'genitive' => 'مَفْعُوْلَيْنِ',
+               'singular' => 'مَفْعُوْلاً',
+               'dual' => 'مَفْعُوْلَيْنِ',
+               'plural' => 'مَفْعُوْلِيْنَ',
             ]
          ],
-         'plural' => [
+         'genitive' => [
             'label' => ' جَمْعٌ (Plural)',
             'types' => [
-               'nominative' => 'مَفْعُوْلُوْنَ',
-               'accusative' => 'مَفْعُوْلِيْنَ',
-               'genitive' => 'مَفْعُوْلِيْنَ',
+               'singular' => 'مَفْعُوْلٍ',
+               'dual' => 'مَفْعُوْلَيْنِ',
+               'plural' => 'مَفْعُوْلِيْنَ',
             ]
          ],
       ];
