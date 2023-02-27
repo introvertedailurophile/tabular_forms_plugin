@@ -12,6 +12,7 @@ function make_form($word)
    // Will display output in tabular form
    $table = "<table>";
    $table .= "<tr>";
+   $table .= "<td style='padding:1rem;'></td>";
    foreach ($words as $case => &$value) {
 
       // Turn template array into array containing new words
