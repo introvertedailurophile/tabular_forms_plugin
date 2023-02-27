@@ -6,12 +6,7 @@ require __DIR__ . "/generate_form.php";
 
 <body>
 
-   <?php
-//   echo $_POST["hints"];
-   // die();
-   make_form($_POST["rootword"]);
-
-   ?>
+   <?php echo make_form($_POST["rootword"]); ?>
 
 </body>
 

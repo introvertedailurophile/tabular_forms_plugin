@@ -1,5 +1,7 @@
 <?php
+
 require __DIR__ . "/generate_template.php";
+
 function make_form($word)
 {
    // Separate Out the Letters
@@ -11,10 +13,10 @@ function make_form($word)
 
    // Will display output in tabular form
    $table = "<table>";
+
    $table .= "<tr>";
    $table .= "<td style='padding:1rem;'></td>";
    foreach ($words as $case => &$value) {
-
       // Turn template array into array containing new words
       $table .= "<td style='padding:1rem;'>{$value['label']}</td>";
    }
@@ -31,6 +33,6 @@ function make_form($word)
       $table .= "</tr>";
    }
    $table .= "</table>";
-   echo $table;
-   // print_r($words);
+
+   return $table;
 }
