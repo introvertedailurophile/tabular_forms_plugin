@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tabular Forms</title>
-  </head>
-  <body>
-    <form action="submit.php" method="post">
-      Enter Root Word: <input lang="ar" type="text" name="rootword" /><br />
-      <!-- <input type="button" value="Hide hints" name="hints" onclick="toggleHidden()" /> -->
-      <input  type="submit" />
-    </form>
-    <script>
-      var isHidden = true;
-      function toggleHidden() {
-        isHidden = !isHidden;
-        console.log(isHidden)
-      }
-      
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabular Forms</title>
+</head>
+
+<body>
+  <form action="render.php" method="GET">
+    Enter Root Word: <input lang="ar" type="text" name="rootword" /><br />
+    <!-- <input type="button" value="Hide hints" name="hints" onclick="toggleHidden()" /> -->
+    <input type="submit" />
+  </form>
+  <script>
+    var isHidden = true;
+    function toggleHidden() {
+      isHidden = !isHidden;
+      console.log(isHidden)
+    }
+
+  </script>
+</body>
+
 </html>

@@ -1,5 +1,5 @@
-
    <?php
+
    // Root word for $long_word
    function make_template()
    {
