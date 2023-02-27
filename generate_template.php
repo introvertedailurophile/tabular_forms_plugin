@@ -14,8 +14,8 @@
       $words = [
          'nominative' => [
             'label' => 'مُفْرَدْ (Singular)',
+            'title' => 'Nominative  (حَالَةُ الرَفَعِ)',
             'types' => [
-               'title' => 'Nominative  (حَالَةُ الرَفَعِ)',
                'singular' => 'مَفْعُوْلٌ',
                'dual' => 'مَفْعُوْلاَنِ',
                'plural' => 'مَفْعُوْلُوْنَ',
@@ -23,8 +23,8 @@
          ],
          'accusative' => [
             'label' => 'مُثَنَّى (Dual)',
+            'title' => 'Accusative  (حَالَةُ النَصَبِ)',
             'types' => [
-               'title' => 'Accusative  (حَالَةُ النَصَبِ)',
                'singular' => 'مَفْعُوْلاً',
                'dual' => 'مَفْعُوْلَيْنِ',
                'plural' => 'مَفْعُوْلِيْنَ',
@@ -32,8 +32,8 @@
          ],
          'genitive' => [
             'label' => ' جَمْعٌ (Plural)',
+            'title' => 'Genitive (حَالَةُ الجَرَّ)',
             'types' => [
-               'title' => 'Genitive (حَالَةُ الجَرَّ)',
                'singular' => 'مَفْعُوْلٍ',
                'dual' => 'مَفْعُوْلَيْنِ',
                'plural' => 'مَفْعُوْلِيْنَ',

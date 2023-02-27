@@ -22,6 +22,7 @@ function make_form($word)
 
    foreach ($words as $case => &$value) {
       $table .= "<tr>";
+      $table .= "<td style='padding:1rem;'>{$value['title']}</td>";
       foreach ($value['types'] as $type => &$type_value) {
          // Turn template array into array containing new words
          $type_value = str_replace("{a}", $a,  str_replace("{b}", $b, str_replace("{c}", $c, $type_value)));
