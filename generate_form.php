@@ -60,7 +60,7 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
    // print_r($words); //No Problem up till here, data passed as expected
    // die();
    foreach ($words as $case => &$word) {
-      // print_r($word); // Last entry is duplicated //Solved by adding '&' in lines 66, 74 and 77.
+      // print_r($word); // Last entry is duplicated //Solved by adding '&' in lines 62 and 70.
       $table .= "<th>{$word['label']}</th>";
    }
    // die();
