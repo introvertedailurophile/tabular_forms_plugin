@@ -16,27 +16,27 @@
             'label' => 'مُفْرَدْ (Singular)',
             'title' => 'Nominative  (حَالَةُ الرَفَعِ)',
             'types' => [
-               'singular' => ['value' => 'مَفْعُوْلٌ', 'is_question' => false],
-               'dual' => ['value' => 'مَفْعُوْلاَنِ', 'is_question' => false],
-               'plural' => ['value' => 'مَفْعُوْلُوْنَ', 'is_question' => false],
+               'singular' => ['value' => 'مَفْعُوْلٌ', 'is_question' => false, 'id' => 1],
+               'dual' => ['value' => 'مَفْعُوْلاَنِ', 'is_question' => false, 'id' => 2],
+               'plural' => ['value' => 'مَفْعُوْلُوْنَ', 'is_question' => false, 'id' => 3],
             ]
          ],
          'accusative' => [
             'label' => 'مُثَنَّى (Dual)',
             'title' => 'Accusative  (حَالَةُ النَصَبِ)',
             'types' => [
-               'singular' => ['value' => 'مَفْعُوْلاً', 'is_question' => false],
-               'dual' => ['value' => 'مَفْعُوْلَيْنِ', 'is_question' => false],
-               'plural' => ['value' =>  'مَفْعُوْلِيْنَ', 'is_question' => false],
+               'singular' => ['value' => 'مَفْعُوْلاً', 'is_question' => false, 'id' => 4],
+               'dual' => ['value' => 'مَفْعُوْلَيْنِ', 'is_question' => false, 'id' => 5],
+               'plural' => ['value' =>  'مَفْعُوْلِيْنَ', 'is_question' => false, 'id' => 6],
             ],
          ],
          'genitive' => [
             'label' => ' جَمْعٌ (Plural)',
             'title' => 'Genitive (حَالَةُ الجَرَّ)',
             'types' => [
-               'singular' => ['value' => 'مَفْعُوْلٍ', 'is_question' => false],
-               'dual' => ['value' => 'مَفْعُوْلَيْنِ', 'is_question' => false],
-               'plural' => ['value' => 'مَفْعُوْلِيْنَ', 'is_question' => false],
+               'singular' => ['value' => 'مَفْعُوْلٍ', 'is_question' => false, 'id' => 7],
+               'dual' => ['value' => 'مَفْعُوْلَيْنِ', 'is_question' => false, 'id' => 8],
+               'plural' => ['value' => 'مَفْعُوْلِيْنَ', 'is_question' => false, 'id' => 0],
             ]
          ],
       ];
