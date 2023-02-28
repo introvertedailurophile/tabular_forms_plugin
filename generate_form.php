@@ -15,7 +15,7 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
    $words = make_template();
 
    // Create an answers array from which to randomise inputs
-   $answers = [];
+   $answer_ids = [];
 
    // Turn template array into array containing new words
    foreach ($words as $case => &$word) {
@@ -23,36 +23,32 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
          $type['value'] = str_replace("{a}", $a,  str_replace("{b}", $b, str_replace("{c}", $c, $type['value'])));
 
          //   Push answer words to array
-         array_push($answers, $type);
+         array_push($answer_ids, $type['id']);
       }
    }
 
    ### QUESTIONS SELECTION ###
 
    // Count number of 'answer' words
-   $num = count($answers);
+   $num = count($answer_ids);
 
    // Random number of questions (2 TO 8 in this case)
    // There will be atleast 2 questions in the table.
-   $random = rand(2, $num - 1);
+   $random = rand(2, $num - 3);
 
-   // Select $random number of words from $answers array 
-   $keys = array_rand($answers, $random);
+   // Select $random number of words from $answer_ids array 
+   $selected_answers = array_rand($answer_ids, $random);
 
-   // Iterate through the random $keys
-   foreach ($keys as $key) {
+   // Iterate through the random $selected_answers
+   foreach ($selected_answers as $answer_id) {
       foreach ($words as $case => &$word) {
          foreach ($word['types'] as &$type) {
-            // Here, $key is always a random index that has been chosen
-            // Check if $type (each word) has been randomly chosen
-            if ($type == $answers[$key]) {
+            if ($type['id'] == $answer_id) {
                $type['is_question'] = true;
             };
          }
       }
    }
-   // print_r($words);
-   // die();
 
    ### RENDERING ###
 
@@ -74,11 +70,11 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
    foreach ($words as $case => &$word) {
       $table .= "<tr>";
       $table .= "<th>{$word['title']}</th>";
-      foreach ($word['types'] as &$type) {
-
+      foreach ($word['types'] as $type) {
+         
          // Checks the 'is_question' value, displays text input if true
          if ($type['is_question']) {
-            $table .= "<td><input type='text'/></td>";
+            $table .= "<td><input type='text' data-answer='{$type['value']}' /></td>";
          } else {
             $table .= "<td>{$type['value']}</td>";
          }
