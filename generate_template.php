@@ -36,7 +36,7 @@
             'types' => [
                'singular' => ['value' => 'مَفْعُوْلٍ', 'is_question' => false, 'id' => 7],
                'dual' => ['value' => 'مَفْعُوْلَيْنِ', 'is_question' => false, 'id' => 8],
-               'plural' => ['value' => 'مَفْعُوْلِيْنَ', 'is_question' => false, 'id' => 0],
+               'plural' => ['value' => 'مَفْعُوْلِيْنَ', 'is_question' => false, 'id' => 9],
             ]
          ],
       ];
