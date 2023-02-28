@@ -61,27 +61,33 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
 
    $table .= "<tr>";
    $table .= "<th></th>";
-   foreach ($words as $case => $word) {
+   // print_r($words); //No Problem up till here, data passed as expected
+   // die();
+   foreach ($words as $case => &$word) {
+      // print_r($word); // Last entry is duplicated //Solved by adding '&' in lines 66, 74 and 77.
       $table .= "<th>{$word['label']}</th>";
    }
+   // die();
    $table .= "</tr>";
-
-   foreach ($words as $case => $word) {
+   // print_r($words);
+   // die();
+   foreach ($words as $case => &$word) {
       $table .= "<tr>";
       $table .= "<th>{$word['title']}</th>";
-      foreach ($word['types'] as $type) {
-         
+      foreach ($word['types'] as &$type) {
+
          // Checks the 'is_question' value, displays text input if true
          if ($type['is_question']) {
             $table .= "<td><input type='text'/></td>";
          } else {
-
             $table .= "<td>{$type['value']}</td>";
          }
       }
+
       $table .= "</tr>";
    }
 
+   // die();
    $table .= "</table>";
 
    return $table;
