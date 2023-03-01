@@ -34,7 +34,7 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
 
    // Random number of questions (2 TO 8 in this case)
    // There will be atleast 2 questions in the table.
-   $random = rand(2, $num - 3);
+   $random = rand(2, $num-1);
 
    // Select $random number of words from $answer_ids array 
    $selected_answers = array_rand($answer_ids, $random);
@@ -70,11 +70,11 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
    foreach ($words as $case => &$word) {
       $table .= "<tr>";
       $table .= "<th>{$word['title']}</th>";
-      foreach ($word['types'] as $type) {
-         
+      foreach ($word['types'] as &$type) {
+
          // Checks the 'is_question' value, displays text input if true
          if ($type['is_question']) {
-            $table .= "<td><input type='text' data-answer='{$type['value']}' /></td>";
+            $table .= "<td class='{$type['id']}'><input class='input {$type['id']}' type='text' data-answer='{$type['value']}' /></td>";
          } else {
             $table .= "<td>{$type['value']}</td>";
          }
@@ -85,6 +85,7 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
 
    // die();
    $table .= "</table>";
-
+   // echo $table;
+   // die();
    return $table;
 }
