@@ -24,7 +24,9 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
 
          //   Push answer words to array
          array_push($answer_ids, $type['id']);
+         unset($type);
       }
+      unset($word);
    }
 
    ### QUESTIONS SELECTION ###
@@ -34,7 +36,7 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
 
    // Random number of questions (2 TO 8 in this case)
    // There will be atleast 2 questions in the table.
-   $random = rand(2, $num-1);
+   $random = rand(2, $num - 1);
 
    // Select $random number of words from $answer_ids array 
    $selected_answers = array_rand($answer_ids, $random);
@@ -47,7 +49,9 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
                $type['is_question'] = true;
             };
          }
+         unset($type);
       }
+      unset($word);
    }
 
    ### RENDERING ###
@@ -57,20 +61,19 @@ function prepareRootWordTable(string $word, int $questions_count = 3)
 
    $table .= "<tr>";
    $table .= "<th></th>";
-   // print_r($words); //No Problem up till here, data passed as expected
-   // die();
-   foreach ($words as $case => &$word) {
-      // print_r($word); // Last entry is duplicated //Solved by adding '&' in lines 62 and 70.
+
+
+   foreach ($words as $case => $word) {
       $table .= "<th>{$word['label']}</th>";
    }
-   // die();
+
    $table .= "</tr>";
    // print_r($words);
    // die();
-   foreach ($words as $case => &$word) {
+   foreach ($words as $case => $word) {
       $table .= "<tr>";
       $table .= "<th>{$word['title']}</th>";
-      foreach ($word['types'] as &$type) {
+      foreach ($word['types'] as $type) {
 
          // Checks the 'is_question' value, displays text input if true
          if ($type['is_question']) {
